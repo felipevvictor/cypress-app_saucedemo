@@ -1,0 +1,189 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-10T17:03:58.258Z",
+    "end": "2026-05-10T17:04:04.188Z",
+    "duration": 5930,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cfccfa4d-78ee-4d9a-8558-6fd67c23637b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2bc15200-7021-42a6-adfe-bfbe271cf8df",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Realizar login com sucesso",
+              "fullTitle": "Login Realizar login com sucesso",
+              "timedOut": null,
+              "duration": 1308,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\ncy.visit('https://www.saucedemo.com/');\n//Act\ncy.get('[data-test=\"username\"]').type('standard_user');\ncy.get('[data-test=\"password\"]').type('secret_sauce');\ncy.get('[data-test=\"login-button\"]').click();\n//Assert\ncy.url().should('eq', 'https://www.saucedemo.com/inventory.html');",
+              "err": {},
+              "uuid": "65c53828-8be1-40de-8997-4583768728e5",
+              "parentUUID": "2bc15200-7021-42a6-adfe-bfbe271cf8df",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Realizar login com usuário invalido",
+              "fullTitle": "Login Realizar login com usuário invalido",
+              "timedOut": null,
+              "duration": 1028,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\ncy.visit('https://www.saucedemo.com/');\n//Act\ncy.get('[data-test=\"username\"]').type('invalid_user');\ncy.get('[data-test=\"password\"]').type('secret_sauce');\ncy.get('[data-test=\"login-button\"]').click();\n//Assert\ncy.get('[data-test=\"error\"]').should('be.visible').and('contain.text', 'Epic sadface: Username and password do not match any user in this service');",
+              "err": {},
+              "uuid": "b43fd4d6-fa96-42fc-9d95-09a2c33882d4",
+              "parentUUID": "2bc15200-7021-42a6-adfe-bfbe271cf8df",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Realizar login com senha invalida",
+              "fullTitle": "Login Realizar login com senha invalida",
+              "timedOut": null,
+              "duration": 633,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\ncy.visit('https://www.saucedemo.com/');\n//Act\ncy.get('[data-test=\"username\"]').type('standard_user');\ncy.get('[data-test=\"password\"]').type('123');\ncy.get('[data-test=\"login-button\"]').click();\n//Assert\ncy.get('[data-test=\"error\"]').should('be.visible').and('contain.text', 'Epic sadface: Username and password do not match any user in this service');",
+              "err": {},
+              "uuid": "10bfed1c-3c82-45c3-833d-ca13f7929860",
+              "parentUUID": "2bc15200-7021-42a6-adfe-bfbe271cf8df",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Realizar login sem preencher os campos",
+              "fullTitle": "Login Realizar login sem preencher os campos",
+              "timedOut": null,
+              "duration": 177,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\ncy.visit('https://www.saucedemo.com/');\n//Act\ncy.get('[data-test=\"login-button\"]').click();\n//Assert\ncy.get('[data-test=\"error\"]').should('be.visible').and('contain.text', 'Epic sadface: Username is required');",
+              "err": {},
+              "uuid": "e7190319-f2c2-4533-9ff7-d3c0daf4bad0",
+              "parentUUID": "2bc15200-7021-42a6-adfe-bfbe271cf8df",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Realizar login sem preencher o campo senha",
+              "fullTitle": "Login Realizar login sem preencher o campo senha",
+              "timedOut": null,
+              "duration": 471,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\ncy.visit('https://www.saucedemo.com/');\n//Act\ncy.get('[data-test=\"username\"]').type('standard_user');\ncy.get('[data-test=\"login-button\"]').click();\n//Assert\ncy.get('[data-test=\"error\"]').should('be.visible').and('contain.text', 'Epic sadface: Password is required');",
+              "err": {},
+              "uuid": "27a9bd48-e95c-4bae-b10f-fd3266d46d9c",
+              "parentUUID": "2bc15200-7021-42a6-adfe-bfbe271cf8df",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "65c53828-8be1-40de-8997-4583768728e5",
+            "b43fd4d6-fa96-42fc-9d95-09a2c33882d4",
+            "10bfed1c-3c82-45c3-833d-ca13f7929860",
+            "e7190319-f2c2-4533-9ff7-d3c0daf4bad0",
+            "27a9bd48-e95c-4bae-b10f-fd3266d46d9c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3617,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reporterEnabled": "cypress-mochawesome-reporter, mocha-junit-reporter",
+        "cypressMochawesomeReporterReporterOptions": {
+          "charts": true,
+          "reportPageTitle": "Test Report",
+          "embeddedScreenshots": true,
+          "inlineAssets": true,
+          "saveAllAttempts": false
+        },
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

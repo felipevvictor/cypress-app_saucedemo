@@ -1,0 +1,132 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-10T17:02:22.330Z",
+    "end": "2026-05-10T17:02:28.855Z",
+    "duration": 6525,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6e851db3-56b8-4b89-9c18-657ab3e61224",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Carrinho.cy.js",
+      "file": "cypress\\e2e\\Carrinho.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e21934f9-8a55-4ca6-b1dc-f96c0497d554",
+          "title": "Adicionar ao Carrinho",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adicionar um item ao carrinho com sucesso",
+              "fullTitle": "Adicionar ao Carrinho Adicionar um item ao carrinho com sucesso",
+              "timedOut": null,
+              "duration": 2760,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange \ncy.visit('https://www.saucedemo.com/');\n//Act login\ncy.get('[data-test=\"username\"]').type('standard_user');\ncy.get('[data-test=\"password\"]').type('secret_sauce');\ncy.get('[data-test=\"login-button\"]').click();\n// Assert inicial\ncy.get('.shopping_cart_badge').should('not.exist');\n// Captura o nome do item dinamicamente\ncy.get('[data-test=\"inventory-item-name\"]').first().invoke('text').then(itemNameToCart => {\n  // Adiciona ao carrinho\n  cy.get('[data-test^=\"add-to-cart\"]').first().click();\n  // Valida badge\n  cy.get('.shopping_cart_badge').should('be.visible').and('have.text', '1');\n  // Vai para carrinho\n  cy.get('#shopping_cart_container').click();\n  // Valida URL\n  cy.url().should('include', '/cart.html');\n  // Valida item correto\n  cy.get('[data-test=\"inventory-item-name\"]').should('have.text', itemNameToCart);\n});",
+              "err": {},
+              "uuid": "ce49a3a8-8a96-4365-a223-69c51b314ae9",
+              "parentUUID": "e21934f9-8a55-4ca6-b1dc-f96c0497d554",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "remover item do carrinho com sucesso",
+              "fullTitle": "Adicionar ao Carrinho remover item do carrinho com sucesso",
+              "timedOut": null,
+              "duration": 1340,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange\ncy.visit('https://www.saucedemo.com/');\n//Act login\ncy.get('[data-test=\"username\"]').type('standard_user');\ncy.get('[data-test=\"password\"]').type('secret_sauce');\ncy.get('[data-test=\"login-button\"]').click();\n// Adiciona ao carrinho\ncy.get('[data-test=\"inventory-item-name\"]').first().invoke('text').then(itemNameToCart => {\n  // Adiciona ao carrinho\n  cy.get('[data-test^=\"add-to-cart\"]').first().click();\n  // Valida badge\n  cy.get('.shopping_cart_badge').should('be.visible').and('have.text', '1');\n  // Vai para carrinho\n  cy.get('#shopping_cart_container').click();\n  // Valida URL\n  cy.url().should('include', '/cart.html');\n  // Valida item correto\n  cy.get('[data-test=\"inventory-item-name\"]').should('have.text', itemNameToCart);\n  // Remove item\n  cy.get('[data-test^=\"remove\"]').first().click();\n  cy.contains('[data-test=\"inventory-item-name\"]', itemNameToCart).should('not.exist');\n  // Valida badge removido\n  cy.get('.shopping_cart_badge').should('not.exist');\n});",
+              "err": {},
+              "uuid": "11c7603c-1324-4018-8894-a7cec2badd4e",
+              "parentUUID": "e21934f9-8a55-4ca6-b1dc-f96c0497d554",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ce49a3a8-8a96-4365-a223-69c51b314ae9",
+            "11c7603c-1324-4018-8894-a7cec2badd4e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4100,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reporterEnabled": "cypress-mochawesome-reporter, mocha-junit-reporter",
+        "cypressMochawesomeReporterReporterOptions": {
+          "charts": true,
+          "reportPageTitle": "Test Report",
+          "embeddedScreenshots": true,
+          "inlineAssets": true,
+          "saveAllAttempts": false
+        },
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
