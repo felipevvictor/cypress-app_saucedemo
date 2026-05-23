@@ -13,10 +13,8 @@ test:
   script:
     # install dependencies
     - npm ci
-    # start the server in the background
-    - npm start &
     # run Cypress tests
-    - npx cypress run --browser chrome
+    - npm run cy:run:chrome
   artifacts:
     when: always
     paths:
