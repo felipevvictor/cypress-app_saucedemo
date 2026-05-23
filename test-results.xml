@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="5.001" tests="4" failures="0">
-  <testsuite name="Root Suite" timestamp="2026-05-23T19:43:05" tests="0" file="cypress\e2e\login.cy.js" time="0.000" failures="0">
+<testsuites name="Mocha Tests" time="10.117" tests="5" failures="1">
+  <testsuite name="Root Suite" timestamp="2026-05-23T20:18:14" tests="0" file="cypress\e2e\login.cy.js" time="0.000" failures="0">
   </testsuite>
-  <testsuite name="Cenários de Teste de Login" timestamp="2026-05-23T19:43:05" tests="4" time="4.998" failures="0">
-    <testcase name="Cenários de Teste de Login Login com sucesso" time="1.132" classname="Login com sucesso">
+  <testsuite name="Cenários de Teste de Login" timestamp="2026-05-23T20:18:14" tests="5" time="10.112" failures="1">
+    <testcase name="Cenários de Teste de Login Login com sucesso" time="1.114" classname="Login com sucesso">
     </testcase>
-    <testcase name="Cenários de Teste de Login Login com credenciais inválidas" time="0.936" classname="Login com credenciais inválidas">
+    <testcase name="Cenários de Teste de Login Login com credenciais inválidas" time="0.932" classname="Login com credenciais inválidas">
     </testcase>
-    <testcase name="Cenários de Teste de Login Login sem preencher o usuário" time="0.478" classname="Login sem preencher o usuário">
+    <testcase name="Cenários de Teste de Login Login sem preencher o usuário" time="0.469" classname="Login sem preencher o usuário">
     </testcase>
-    <testcase name="Cenários de Teste de Login Login sem preencher a senha" time="0.478" classname="Login sem preencher a senha">
+    <testcase name="Cenários de Teste de Login Login sem preencher a senha" time="0.483" classname="Login sem preencher a senha">
+    </testcase>
+    <testcase name="Cenários de Teste de Login Quebrar teste de login" time="0.000" classname="Quebrar teste de login">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `[data-test=error]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=error]`, but never found it.
+    at Login.validarMensagemErro (webpack://project3/./cypress/pages/login/index.js:35:13)
+    at Context.eval (webpack://project3/./cypress/e2e/login.cy.js:32:14)]]></failure>
     </testcase>
   </testsuite>
 </testsuites>

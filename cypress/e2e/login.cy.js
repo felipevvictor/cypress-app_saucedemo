@@ -26,4 +26,9 @@ describe('Cenários de Teste de Login', () => {
         Login.preencherCamposELogar('standard_user', '');
         Login.validarMensagemErro('Epic sadface: Password is required');
     });
+
+    it('Quebrar teste de login', () => {
+        Login.preencherCamposELogar('problem_user', 'secret_sauce');
+        Login.validarMensagemErro('Epic sadface: Password is required');
+    });
 });
